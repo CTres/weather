@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 %html
   %head
     %title Weather
@@ -16,14 +16,8 @@
     = label_tag "state"
     = text_field_tag "state"
     = submit_tag "Save"
-  
 
   %h2
-    = "Temperature in Fahreinheit is #{@temp_f}"
-  / %h2
-  /   - if @hash != nil
-  /     - @hash.each_pair do |k,v|
-  /       %li 
-  /       ="#{k} #{v}"
-
+    =if @hash != nil
+      ="#{@display_location["city"]} Temperature is #{@temp_f}F"
 
