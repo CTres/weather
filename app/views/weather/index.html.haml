@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Weather
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+
+  %h1 Weather from Wunderground
+
+  =form_tag "/" do
+    = label_tag "city"
+    = text_field_tag "city"
+    = label_tag "state"
+    = text_field_tag "state"
+    = submit_tag "Save"
+  
+
+  %h2
+    = "Temperature in Fahreinheit is #{@temp_f}"
+  / %h2
+  /   - if @hash != nil
+  /     - @hash.each_pair do |k,v|
+  /       %li 
+  /       ="#{k} #{v}"
+
+
